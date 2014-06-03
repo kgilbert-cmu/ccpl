@@ -14,3 +14,6 @@ Command to go back one page of listings:
     "back"
 
 Type the number in brackets next to a title to open that listing in the browser.
+
+If you're not sure about the listing, or just want to read the description, type the number in brackets next to the
+title, but with a question mark after it.

@@ -7,6 +7,8 @@ PAGE_SIZE = 10
 CHANNEL = 0
 TITLE = 0
 LINK = 1
+INDEX = 0
+DESC = 2
 
 
 def main():
@@ -41,8 +43,13 @@ def main():
                         i = i - 2
                 elif inp in ["quit", 'q']:
                     return None
-                elif inp.isdigit():
-                    webbrowser.open(items[int(inp)][LINK].text)
+                elif inp.isdigit() or '?' in inp:
+                    if '?' in inp:
+                        num = int(inp.split("?")[INDEX])
+                        print items[num][TITLE].text, '\n'
+                        print items[num][DESC].text.split('>')[-1], '\n'
+                    else:
+                        webbrowser.open(items[int(inp)][LINK].text)
                 else:
                     continue
         except UnicodeEncodeError:
