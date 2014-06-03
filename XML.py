@@ -1,4 +1,4 @@
-import xml.etree.ElementTree as ET
+import xml.etree.ElementTree as ElementTree
 import urllib2
 import re
 import webbrowser
@@ -15,13 +15,13 @@ def main():
     begin = raw_input("Would you like to browse CDs or DVDs?  ")
 
     if begin == "CD" or begin == "CDs":
-        CD_XML = urllib2.urlopen("http://cuyahogalibrary.org/feedData/newCDMusic.xml")
-        XML_TREE = CD_XML
+        cd_xml = urllib2.urlopen("http://cuyahogalibrary.org/feedData/newCDMusic.xml")
+        xml_tree = cd_xml
     else:
-        DVD_XML = urllib2.urlopen("http://sciron.cuyahoga.lib.oh.us/feeds/newdvds.xml")
-        XML_TREE = DVD_XML
+        dvd_xml = urllib2.urlopen("http://sciron.cuyahoga.lib.oh.us/feeds/newdvds.xml")
+        xml_tree = dvd_xml
 
-    tree = ET.parse(XML_TREE)
+    tree = ElementTree.parse(xml_tree)
     root = tree.getroot()[CHANNEL]
 
     items = root.findall("item")
@@ -33,7 +33,7 @@ def main():
                 idx = i * PAGE_SIZE + x
                 print "[{0}] {1} \n".format(idx, re.split("\[|/", items[idx][TITLE].text)[0])
             repeat = True
-            while (repeat):
+            while repeat:
                 inp = raw_input("\nItem #, 'next', or 'quit':  ")
                 if inp in ["next", ""]:
                     repeat = False
