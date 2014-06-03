@@ -1,3 +1,7 @@
+Start the program with
+    "python XML.py"
+    or double-click the `.py` file
+
 Commands to quit command-line tool:
 	"quit"
 	"q"
