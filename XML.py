@@ -40,7 +40,7 @@ def main():
                 elif inp == "back":
                     repeat = False
                     if i > 0:
-                        i = i - 2
+                        i -= 2
                 elif inp in ["quit", 'q']:
                     return None
                 elif inp.isdigit() or '?' in inp:
@@ -54,7 +54,7 @@ def main():
                     continue
         except UnicodeEncodeError:
             pass
-        i = i + 1
+        i += 1
 
 if __name__ == "__main__":
     main()
