@@ -1,0 +1,10 @@
+Commands to quit command-line tool:
+	"quit"
+	"q"
+
+Commands to go to next page of listings:
+	"next"
+	" " (empty string, as in - type nothing and hit 'Enter')
+
+
+Type the number in brackets next to a title to open that listing in the browser.
