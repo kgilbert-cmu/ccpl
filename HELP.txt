@@ -10,5 +10,7 @@ Commands to go to next page of listings:
 	"next"
 	" " (empty string, as in - type nothing and hit 'Enter')
 
+Command to go back one page of listings:
+    "back"
 
 Type the number in brackets next to a title to open that listing in the browser.

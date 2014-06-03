@@ -24,7 +24,8 @@ def main():
 
     items = root.findall("item")
 
-    for i in xrange(0, len(items) / PAGE_SIZE):
+    i = 0
+    while i < (len(items) / PAGE_SIZE):
         try:
             for x in xrange(0, PAGE_SIZE):
                 idx = i * PAGE_SIZE + x
@@ -34,6 +35,10 @@ def main():
                 inp = raw_input("\nItem #, 'next', or 'quit':  ")
                 if inp in ["next", ""]:
                     repeat = False
+                elif inp == "back":
+                    repeat = False
+                    if i > 0:
+                        i = i - 2
                 elif inp in ["quit", 'q']:
                     return None
                 elif inp.isdigit():
@@ -42,6 +47,7 @@ def main():
                     continue
         except UnicodeEncodeError:
             pass
+        i = i + 1
 
 if __name__ == "__main__":
     main()
